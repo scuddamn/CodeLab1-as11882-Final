@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
     public static GameManager instance; //static var to hold Singleton
 
     public Text scoreText; //score text component
+    public string displayScoreTemplate =
+        "<currentScore>" +
+        "/" +
+        "<targetScore>";
 
     private const string FILE_HS_LIST = "/highscores.txt";
 
@@ -49,6 +53,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //string displayScore = displayScoreTemplate.Replace("<targetScore>", LevelTargetManager.)
+
         highScoreNames = new List<string>();
         highScoreNums = new List<float>();
 
@@ -71,20 +77,22 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < 10; i++)
             {
                 highScoreNames.Add("SASH");
-                highScoreNums.Add(100 + i * 10);
+                highScoreNums.Add(10 + i * 10);
             }
 
         }
 
         Debug.Log(Application.dataPath);
 
-        scoreText = GetComponentInChildren<Text>(); //get the text component from the children of this gameObject
+        //scoreText = GetComponentInChildren<Text>(); //get the text component from the children of this gameObject
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "Score: " + score;
+        string displayScore = displayScoreTemplate.Replace("<currentScore>", Score + "");
+        scoreText.text = displayScore;
+
     }
 
     public void UpdateHighScores()
