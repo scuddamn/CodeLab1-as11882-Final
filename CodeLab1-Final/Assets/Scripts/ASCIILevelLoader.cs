@@ -2,20 +2,58 @@
 using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ASCIILevelLoader : MonoBehaviour
 {
  
     public GameObject prize;
+    public GameObject powerUp;
 
     public float xOffset = -5;
     public float zOffset = -80;
 
-    public string fileLevel = "Level.txt";
+    string fileLevel = "Level.txt";
+
+    public int levelNum;
+
 
     // Start is called before the first frame update
-    void Start()
+    public void Go()
     {
+        levelNum = SceneManager.GetActiveScene().buildIndex;
+
+        switch (levelNum)
+        {
+            case 0:
+                print("level0");
+                fileLevel = "Level 0.txt";
+                break;
+            case 1:
+                print("level1");
+                fileLevel = "Level 1.txt";
+                break;
+            case 2:
+                print("level2");
+                fileLevel = "Level 2.txt";
+                break;
+            case 3:
+                print("level3");
+                fileLevel = "Level 3.txt";
+                break;
+            case 4:
+                print("level4");
+                fileLevel = "Level 4.txt";
+                break;
+            default:
+                print("level not determined");
+                fileLevel = "Level 0.txt";
+                break;
+
+
+        }
+
+
         string fullFilePath = Application.dataPath + "/Files/" + fileLevel;
 
         print("Full file path: " + fullFilePath);
@@ -45,6 +83,11 @@ public class ASCIILevelLoader : MonoBehaviour
                     case '*':
                         newObject = Instantiate<GameObject>(prize);
                         newObject.transform.SetParent(prizeHolder.transform); //make prize objects children of the holder
+                        newObject.transform.position =
+                                     new Vector3(x + xOffset, 1, z + zOffset);
+                        break;
+                    case 'p':
+                        newObject = Instantiate<GameObject>(powerUp);
                         newObject.transform.position =
                                      new Vector3(x + xOffset, 1, z + zOffset);
                         break;
