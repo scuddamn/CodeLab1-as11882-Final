@@ -76,13 +76,14 @@ public class PlayerController : MonoBehaviour
         {
             if (poweredUp == false)
             {
+                other.gameObject.SetActive(false);
                 int randomPower = Random.Range(0, powers.Length);
                 powers[randomPower].Upgrade(gameObject);
                 poweredUp = true;
             }
         }
 
-        
+
     }
 
 

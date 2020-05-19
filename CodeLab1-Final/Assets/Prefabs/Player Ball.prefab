@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 1075831928859949111}
   - component: {fileID: 1075831928859949108}
   - component: {fileID: 1075831928859949109}
-  - component: {fileID: 1531074354328806857}
-  - component: {fileID: 2929232946480169366}
-  - component: {fileID: 4332873332233222404}
+  - component: {fileID: 5012558415618504682}
+  - component: {fileID: 1002986055356616766}
+  - component: {fileID: 5665512585914919766}
   m_Layer: 0
   m_Name: Player Ball
   m_TagString: Player
@@ -131,7 +131,7 @@ MonoBehaviour:
   mouseSpeed: 2
   poweredUp: 0
   doublePoints: 0
---- !u!114 &1531074354328806857
+--- !u!114 &5012558415618504682
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,19 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f10dc53d879e4478f8eb694042d66dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2929232946480169366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075831928859949114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f616f22029a54fb8a31e29b446caf95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4332873332233222404
+--- !u!114 &1002986055356616766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,5 +153,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e961c27fdef084bf0ab2c379ba8d4c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5665512585914919766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075831928859949114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f616f22029a54fb8a31e29b446caf95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
